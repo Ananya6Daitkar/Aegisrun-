@@ -1,0 +1,18 @@
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Generated runtime evidence and sandbox state
+reports/
+state/
+
+# OmniRush's local dependency cache; sessions are submitted via the dashboard
+.opencode/node_modules/

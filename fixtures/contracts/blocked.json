@@ -1,0 +1,3 @@
+[
+  {"tool": "orders.cancel", "side_effect": "destructive", "response": {"type": "object", "required": ["ok"], "properties": {"ok": "boolean"}}}
+]

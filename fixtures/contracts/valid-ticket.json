@@ -1,0 +1,3 @@
+[
+  {"tool": "create_ticket", "side_effect": "write", "requires_approval": true, "input": {"type": "object", "required": ["title", "requester"], "properties": {"title": "string", "requester": "string"}, "additionalProperties": false}, "response": {"type": "object", "required": ["ticket_id"], "properties": {"ticket_id": "string"}}}
+]

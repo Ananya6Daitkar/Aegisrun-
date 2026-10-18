@@ -1,0 +1,3 @@
+[
+  {"tool": "send_email", "side_effect": "write", "requires_approval": true, "input": {"type": "object", "required": ["recipient", "subject"], "properties": {"recipient": "string", "subject": "string"}, "additionalProperties": false}, "response": {"type": "object", "required": ["queued"], "properties": {"queued": "boolean"}}}
+]

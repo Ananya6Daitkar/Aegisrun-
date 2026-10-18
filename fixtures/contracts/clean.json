@@ -1,0 +1,3 @@
+[
+  {"tool": "inventory.read", "side_effect": "read", "response": {"type": "object", "required": ["items", "count"], "properties": {"items": "array", "count": "number"}}}
+]

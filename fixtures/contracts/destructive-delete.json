@@ -1,0 +1,3 @@
+[
+  {"tool": "delete_record", "side_effect": "destructive", "requires_approval": true, "input": {"type": "object", "required": ["record_id"], "properties": {"record_id": "string"}, "additionalProperties": false}, "response": {"type": "object", "required": ["deleted"], "properties": {"deleted": "boolean"}}}
+]
