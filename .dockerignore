@@ -3,3 +3,6 @@ __pycache__/
 .git/
 reports/
 state/
+.env
+.env.*
+!.env.example
