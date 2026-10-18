@@ -4,7 +4,7 @@ A local-first pressure-test runner for deterministic JSON tool contracts and con
 
 ## Quick start
 
-Requires Python 3.12. There are no runtime dependencies; tests use the standard-library `unittest` runner.
+Requires Python **3.12.8** (the version is pinned in `.python-version`). There are no third-party runtime dependencies; `requirements.lock` is intentionally empty and tests use the standard-library `unittest` runner.
 
 ```bash
 python -m aegisrun run --scenario valid-ticket       # exit 0; one ledger record
@@ -29,3 +29,26 @@ docker run --rm aegisrun
 # The image has no runtime dependencies and can run its tests offline:
 docker run --rm --entrypoint python aegisrun -m unittest discover -s tests -q
 ```
+
+## Clean Linux rebuild
+
+From a fresh clone, run the single offline test command:
+
+```bash
+git clone https://github.com/Ananya6Daitkar/Aegisrun-.git
+cd Aegisrun-
+python3.12 --version  # expected: Python 3.12.8
+python3.12 -m unittest discover -s tests -q
+python3.12 -m aegisrun run --scenario valid-ticket
+```
+
+The Docker rebuild does not install packages or require network access after the base image is available:
+
+```bash
+docker build -t aegisrun:latest .
+docker run --rm --network none aegisrun:latest
+docker run --rm --network none --entrypoint python aegisrun:latest \
+  -m unittest discover -s tests -q
+```
+
+Runtime reports and sandbox state are generated locally and ignored by Git. No credentials are required; `.env.example` documents that the application has no settings or secrets.

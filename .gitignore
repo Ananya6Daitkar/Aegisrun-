@@ -15,4 +15,5 @@ reports/
 state/
 
 # OmniRush's local dependency cache; sessions are submitted via the dashboard
-.opencode/node_modules/
+.opencode/
+opencode.jsonc
